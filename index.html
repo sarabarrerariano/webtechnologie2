@@ -407,21 +407,317 @@ and prototypical inheritance</h4>
   </code></pre>
 
   <h4>Websockets</h4>
-  <p>WebSockets is een geavanceerde techniek die het mogelijk maakt om een interactieve verbinding te openen tussen de browser van een gebruiker en een server. Met deze API kunnen berichten naar een server worden verzonden en event-gebaseerde antwoorden worden ontvangen, zonder de server te moeten pollen voor een antwoord.<br>Lees <a href="https://developer.mozilla.org/nl/docs/WebSockets">hier</a> meer</p>
-
-  <h4>Lets get started! </h4>
-  <pre><code>
-    npm install express -g</code> Nu kan je globaal op je computer een basis node app instaleren </pre>
-
-  <h5>Package.json</h5>
-  <p>Dit bestand beschrijft uw applicatie. Het bevat alle data en dependencies die je nodig hebt voor je applicatie <code>npm install</code> zorgt dat de modules automatisch installeert</p>
+  <p>WebSockets is een geavanceerde techniek die het mogelijk maakt om een interactieve verbinding te openen tussen de browser van een gebruiker en een server. Met deze API kunnen berichten naar een server worden verzonden en event-gebaseerde antwoorden worden ontvangen, zonder de server te moeten pollen voor een antwoord.<br>Lees <a href="https://developer.mozilla.org/nl/docs/WebSockets">hier</a> meer
+  <pre>Installeer socket.io<code>
+  npm install socket.io --save</code></pre>
+  
+  Het is belangrijk om te weten wanneer je app moet luisteren of moet sturen aangezien deze allebei een andere code vragen.
+  <pre>Luisteren<code>
+  Io.on  
+  </code></pre>
+   <pre>Sturen<code>
+  Io.emit 
+  </code></pre>
+  </p>
 
   <h4>Jade</h4>
+  <p>
+    Jade is een kort en eenvoudig templating taal met een sterke focus op de prestaties en krachtige functies .
+  </p>
+  <pre>Voorbeeld jade syntax
+  <code>
+  doctype html
+  html(lang="en")
+    head
+    title= pageTitle
+
+    body
+    h1 Jade - node template engine
+    #container.col
+      if youAreUsingJade
+        p You are amazing
+      else
+        p Get on it!
+      p.
+        Jade is a terse and simple
+        templating language with a
+        strong focus on performance
+        and powerful features.
+  </code></pre>
+
+  <h4>mongoDB</h4>
+  <p>
+  MongoDB is een opensource document-georiënteerde database en is geschreven in C++. Er is geen schema, de documenten worden in de vorm van BSON (binair JSON) opgeslagen en de structuur van deze documenten is flexibel. De database kan gemakkelijk gedistribueerd worden, de data wordt dan over meerdere computers verspreid om gedistribueerde gegevensverwerking mogelijk te maken. MongoDB is geen relationeel databasemanagementsysteem, er is geen ondersteuning voor joins. MongoDB wordt gerekend tot de zogenaamde NoSQL-databases. 
+  </p>
+
+  <h4>Mini appje!</h4>
+  <p>
+  Volgende stappen gebruik je steeds als je een nieuwe applicatie in node wil bouwen.
+  </p>
+  <pre><h5>1. EXPRESS</h5><code>
+  npm install express -g</code> 
+  Nu kan je globaal op je computer een basis node 
+  app instaleren </pre>
+  
+  <pre><h5>2. Package.json</h5><code>
+  npm install
+  </code>Dit bestand beschrijft uw applicatie. 
+  Het bevat alle data en dependencies die je nodig hebt 
+  voor je applicatie npm install zorgt dat de modules
+  automatisch installeert
+  OPGELET: Vergeet de node_modules folder niet te ignoren 
+  voor git. De paths van deze modulesk kunnen soms te lang 
+  zijn om mee te pushen op git </pre>
+  
+  <pre><h5>3. Start mongo</h5><code>
+  mongo 
+  mongod
+  </code>Vooraleer je je project gaat opstarten, 
+  moet je je database opstaren. Indien je mongodb 
+  nog niet geinstaleerd hebt volg dit <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/">stappenplan</a></pre>
+
+  <pre><h5>4. Start Applicatie</h5><code>
+  node app.js - node bin/www
+  nodemon app.js - nodemon bin/www
+  npm start
+  </code>
+  Nodemon, node en npm sart zorgen ervoro dat de 
+  applicatie opstart en zo gezien kan worden in de browser. 
+  Wat is het verschil tussen node en nodemon? Nodemon zal
+  de applicatie automatisch updaten als er iets wordt 
+  gewijzigd in de applicatie.
+  Indien je nodemon nog niet geinstalleerd hebt, moet je 
+  deze code gebruiken
+
+  <code>npm install nodemon -g</code></pre>
+
+  <h3>Lab 6 : Angular.js</h3>
+  <p> AngularJS is een JavaScript-framework dat geheel ontwikkeld is om tegemoet te komen aan de eisen van grote en complexe webapplicaties. AngularJS is oorspronkelijk gemaakt voor een intern project bij Google, maar inmiddels is er ook een grote open source-community actief.
+
+  In AngularJS ontwikkel je niet één grote applicatie waarin alles met alles verbonden is. In plaats daarvan maak je kleinere, gespecialiseerde modules. Deze zijn los van elkaar te ontwikkelen en te testen. Op de plekken waar ze nodig zijn in de applicatie, worden ze dynamisch ingevoegd via het principe van dependenciesency Injection.</p>
+
+  <h4>MVC</h4>
+  <p>Angular.js maakt gebruik van MVC, beter gekend als Models, view en controllers</p>
+  <h5>models</h5>
+  <p>Alles wat data en queries bevat</p>
+
+  <h5>View</h5>
+  <p>User Interface -> Spreekt nooit rechtstreeks met het model. Dit gebeurd vai de controller</p>
+
+  <h5>Controller</h5>
+  <p>Alle logica, structuur</p>
+  
+  <h4>Directives</h4>
+  <p>markeringen op dom-elementen die aan de angular compiler vertellen dat dat dom-element een specifieke functie heeft</p>
+  <pre><code>
+    < ul>
+      < li ng-repeat="item in items">
+      {{item.description}}
+      < /li>
+    < /ul>
+  </code></pre>
+
+ <h4>How to use Angular?</h4>
+ <p>Eerst en vooral moet je angular download, dat doe je <a href="https://angularjs.org/">hier</a></p>
+
+ 
+ <h3>Lab 7 : SASS</h3>
+ <p>SASS biedt een uitgebreide set aan functies en mogelijkheden om gestructureerd te werk te gaan en zo de website te stylen. Zo kan je gebruik maken van een aantal methodes om CSS3 regels met diverse prefixes in 1 regel te schrijven. Met deze prefixes is het mogelijk om versies van specifieke browsers een bepaalde regel te laten ondersteunen. Zo kan CSS2 en CSS3 gebruikt worden voor alle browsers. Sommige versies hebben geen prefixes meer nodig, maar toch wil je rekening houden met oudere versies. Met SASS is het ook mogelijk om je eigen functies te maken om zo repeterende regels toe te voegen aan je stylesheet. </p>
+
+ <h4>Waarom Sass en andere pre-processoren?</h4>
+<p>
+  <ul>
+    <li>Minder code</li>
+    <li>Variabelen</li>
+    <li>Mixins</li>
+    <li>Laat je toe je CSS te ordenen</li>
+    <li>Geen duizenden lijnen code</li>
+  </ul>
+</p>
+
+ <h4>Sass instaleren!</h4>
+ <p>Sass kan je installeren via deze link. Windows is een fantastisch besturingssysteem en wilt daarom dat je eerst ruby installeert. De rub-installer dat word aangeraden voor windows is een single-click installer dat alles voor jou installeert</p>
+
+ <h4>Sass mapping</h4>
+  <pre><code>
+  /css
+   style.css
+  /scss
+   /modules
+   _nav.scss
+   _modal.scss
+   _article.scss
+   _footer.scss
+   style.scss
+   _base.scss
+  </code></pre>
+
+  <h4>Sass file compiling</h4>
+  <p>Het is makkelijk om sass automatisch te laten compilen zonder je zorgen te hoeven maken</p>
+  <pre>Sass Watches you!<code>
+  sass --watch style.scss:../css/style.css
+  --style compressed
+  </code></pre>
+
+  <h4>Imports</h4>
+  <p>Split je files voor een betere structuur. Zoek hier vooral je eigen perfecte structuur. Al je gegenereerde files moeten samengegoten worden in een file, namelijk de style.scss</p>
+  <pre>Imports in Style.scss<code>
+  @import 'base';
+  @import 'partials/nav';
+  @import 'partials/footer';
+  </code></pre>
+  
+<h4>Variablen</h4>
+<pre>Kleur Variabele<code>
+$color-primary: #e74c3c;
+
+h1 {
+ color: $color-primary;
+}
+
+a {
+  color: lighten($color-primary, 50%);
+} 
+</code></pre>
+  
+<pre>Font Variabele<code>
+$font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+body {
+ font-family: $font-helvetica;
+}  
+</code></pre>
+
+<h4>Nesting</h4>
+<p>Nakkelijk in Sass is code nesten, zonder steeds alle classenamen en idnamen te gebruiken om dat element te stylen</p>
+<pre><code>
+#container{
+  p{
+    strong{
+    }
+    em {
+    }
+  }
+}
+</code></pre>
+
+<h4>Mixins</h4>
+<p>Mixins zorgen ervoor dat je bepaalde lijnen code slechts 1 keer volledig hoeft uit te schrijven op nadien met 1 lijntje code te gebruiken. </p>
+<pre>Voorbeeld Mixin<code>
+@mixin border-radius($radius) {
+ -webkit-border-radius: $radius;
+ -moz-border-radius: $radius;
+ -ms-border-radius: $radius;
+ border-radius: $radius;
+} 
+</code></pre>
+<pre>Gebruik bovenstaande mixin<code>
+nav {
+ @include border-radius(10px);
+} 
+</code></pre>
+
+<h4>Inheritence</h4>
+<p>Inheretence zorgt ervoor dat we stijl elementen van andere elementen kunnen overerver om zo dubbele code te vermijden</p>
+<pre>Manier <strong>zonder</strong>inheritence<code>
+.message {
+ border: 1px solid #ccc;
+ padding: 10px;
+ color: #333;
+}
+.success {
+ @extend .message;
+ border-color: green;
+}
+.error {
+ @extend .message;
+ border-color: red;
+} 
+</code></pre>
+<pre>manier <strong>met</strong> inheritence<code>
+.message, .success, .error, .warning {
+ border: 1px solid #cccccc;
+ padding: 10px;
+ color: #333;
+}
+.success {
+ border-color: green;
+}
+.error {
+ border-color: red;
+} 
+</code></pre>
+
+<h4>Bourbon</h4>
+<p>Bourbon is een mixin library die ervoor zorgt dat je minder code zelf moet schrijven</p>
+
+<pre><h5>installeer bourbon</h5><code>
+bourbon install
+</code></pre>
+<pre><h5>Importeer in style.scss</h5><code>
+@import 'bourbon/bourbon'
+</code></pre>
 
 
+<h3>Lab 8 : Gulpjs</h3>
+<p>Gulp zorgt ervoor dat de performantie van je site of app de hoogte ingaat doordat deze tool css bestanden, javascript, afbeeldingen en anderen gaat compreseren. </p>
 
+<h4>Gulp gebruiken?!</h4>
+<pre><h5>1 . Gulp instaleren</h5><code>
+npm install gulp -g
+</code></pre>
 
+<pre><h5>2. Gulp lokaal instaleren</h5><code>
+//Eerst een package.json installeren
+npm init
 
+///instaleren in u prijects dev
+npm install gulp --save-dev
+</code></pre>
+
+<pre><h5>3. Setting up GULP</h5>
+Maak een file <strong>gulpfile.js</strong> aan
+Commit de file naar je repository
+</pre>
+
+<pre><h5>4. Load gulp</h5><code>var gulp = require('gulp');
+gulp.task('default', function() {
+ // place code for your default task here
+}); </code>
+</pre>
+
+<h4>Gulp-minify-css</h4>
+<pre><h5>Installeer</h5><code>
+npm install --save-dev gulp-minify-css
+
+//load gulp
+var gulp = require('gulp'),
+minifyCSS = require('gulp-minify-css');
+gulp.task('minify-css', function() {
+ gulp.src('./src/css/*.css')
+ .pipe(minifyCSS(opts))
+ .pipe(gulp.dest('./build/css/'))
+}); 
+</code></pre>
+
+<h4>CSS combineren met default tasks</h4>
+<pre><h5>Installatie</h5><code>
+npm install --save-dev gulp-concat-css
+</code></pre>
+
+<pre><h5>Code</h5><code>
+var gulp = require('gulp'),
+concatCSS = require('gulp-concat-css'),
+minifyCSS = require('gulp-minify-css');
+gulp.task('minify-css', function() {
+ gulp.src('./src/css/*.css')
+ .pipe(concatCSS('build.css'))
+ .pipe(minifyCSS(opts))
+ .pipe(gulp.dest('./build/css/'))
+});
+
+gulp.task('default', ['minify-css']);
+</code></pre>
 
 
 
